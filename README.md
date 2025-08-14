@@ -136,17 +136,20 @@ Essas estratégias, baseadas em evidências da análise de dados, podem ser impl
    
 ![Distribuição de Evasão](Gráficos/dist_evasao.png)
 
+
 ### 2.	Seção Correlação / Seleção de Features
 
 ![Correlação](Gráficos/correlacao.png)
 
 ![Correlação e Limiar](Gráficos/corr_limiar.png)
 
+
 ### 3.	Seção Análises Direcionadas
 
 ![Total Gasto](Gráficos/totalgasto_evasao.png)
 
 ![Tempo de Contrato](Gráficos/tempoContrato_evasao.png)
+
 
 ### 4.	Seção Modelagem: Curvas e Matriz
 
@@ -166,7 +169,13 @@ Essas estratégias, baseadas em evidências da análise de dados, podem ser impl
 
 ![Matriz de Confusão RFor](Gráficos/matrix_conf_RFor.png)
 
-### 5.	Seção Importância das Variáveis
+
+### 5.  Seção Avaliação do Modelo
+
+![Avaliação do Modelo](Gráficos/comp_LR_RF.png)
+
+
+### 6.	Seção Importância das Variáveis
 
 **•	Logistic Regression**
 
