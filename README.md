@@ -134,6 +134,31 @@ A análise e a modelagem preditiva foram eficazes em extrair insights valiosos d
 ---
 <br>
 
+1.	Seção EDA / Balanceamento
+•	Figura 1 — Distribuição de Churn (fig1_churn_distribution.png)
+•	Legenda: “Distribuição absoluta e percentual de clientes ativos vs evadidos”.
+2.	Seção Correlação / Seleção de Features
+•	Figura 2 — Heatmap das variáveis com |corr| >= 0.2 com Churn (fig2_heatmap_corr_churn.png)
+•	Legenda: “Matriz de correlação entre variables selecionadas e Churn — mostra correlações diretas/indiretas”.
+3.	Seção Análises Direcionadas
+•	Figura 3 — Boxplot Total Gasto x Churn (fig3_box_totalgasto_churn.png)
+•	Figura 4 — Boxplot Tenure x Churn (fig4_box_tenure_churn.png)
+•	Legendas: mediana e comparação entre grupos.
+4.	Seção Modelagem: Curvas e Matriz
+•	Figura 5 — ROC Logistic Regression (fig5_roc_lr.png)
+•	Figura 6 — ROC Random Forest (fig6_roc_rf.png)
+•	Figura 7 — Confusion Matrix LR (fig7_cm_lr.png)
+•	Figura 8 — Confusion Matrix RF (fig8_cm_rf.png)
+5.	Seção Importância das Variáveis
+•	Figura 9 — Top coeficientes (Logistic) (fig9_coef_lr.png)
+•	Figura 10 — Top importâncias (Random Forest) (fig10_imp_rf.png)
+
+
+
+
+
+
+
 ### **Autor:** Raphael Bertone
 
 [LinkedIn](https://www.linkedin.com/in/raphaelbertone/)  - 
