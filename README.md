@@ -54,11 +54,13 @@ A etapa de **análise de correlação** e a verificação de **multicolinearidad
 <br>
 Os fatores que mais influenciam a evasão foram extraídos tanto da análise de correlação quanto da importância de variáveis dos modelos. Abaixo estão os principais destaques:
 
-*   **Tempo de Contrato (customer_tenure)**: A análise demonstrou uma forte 
+*   **Tempo de Contrato**: A análise demonstrou uma forte 
 correlação negativa com a evasão. A mediana do tempo de contrato para clientes que evadiram é significativamente menor (9 meses) do que para clientes ativos (38 meses). Isso sugere que **clientes que permanecem por menos tempo têm uma probabilidade muito maior de cancelar**.
 
-*   **Tipo de Contrato (contract_Month-to-month)**: Clientes com contratos mensais (Month-to-month) apresentaram uma forte correlação positiva com a evasão. Isso indica que a flexibilidade de um contrato sem fidelidade aumenta o risco de cancelamento.
+*   **Tipo de Contrato**: Clientes com contratos mensais apresentaram uma forte correlação positiva com a evasão. Isso indica que a flexibilidade de um contrato sem fidelidade aumenta o risco de cancelamento.
+  
 *   **Serviços de Internet (internet_InternetService_Fiber optic)**: O serviço de internet por fibra óptica mostrou um impacto notável na evasão. Embora seja um serviço de alta velocidade, a análise aponta que ele está associado a um maior índice de churn. Isso pode ser um indicativo de problemas de qualidade ou custo percebido.
+  
 *   **Valores Cobrados (account_Charges_Monthly)**: O valor da cobrança mensal (account_Charges_Monthly) também demonstrou ter uma influência considerável na probabilidade de evasão. Clientes que evadiram tendem a ter um gasto mensal maior.
 
 *   **Serviços Adicionais:** A ausência de serviços adicionais como **suporte técnico (tech_TechSupport)** e **segurança online (internet_OnlineSecurity)** aumenta a probabilidade de evasão. Esses serviços parecem atuar como "ancoragens", contribuindo para a satisfação e retenção do cliente.
@@ -85,9 +87,11 @@ Dois modelos de classificação foram implementados e comparados: **Regressão L
 *   **Regressão Logística**: Apresentou o melhor **recall** (78.25%). Isso significa que, entre todos os clientes que realmente evadiriam, o modelo conseguiu identificar 78.25% deles. No contexto de retenção, essa é uma métrica extremamente importante, pois permite que a empresa direcione ações para um número maior de clientes em risco, **reduzindo o número de falsos negativos**.
 
 *   **Random Forest**: Teve um desempenho geral um pouco superior em métricas como **acurácia** (77.33%) e **precisão** (56.61%). O modelo cometeu menos falsos positivos (identificando menos clientes como em risco, quando na verdade não estavam), o que pode ser benéfico para empresas com orçamentos de retenção mais limitados.
+
+
 <br>
 
-**Conclusão sobre a Escolha do Modelo**
+### ✅ **Conclusão sobre a Escolha do Modelo**
 
 Para o objetivo de **proatividade na retenção de clientes**, a **Regressão Logística** é a escolha mais recomendada devido ao seu **recall superior**. A capacidade de identificar uma maior proporção de clientes que realmente evadirão é o mais importante para uma intervenção eficaz. Embora o **Random Forest** seja um modelo mais robusto e com melhor acurácia geral, o alto recall da Regressão Logística a torna mais valiosa para esta aplicação específica.
 
@@ -126,38 +130,61 @@ Essas estratégias, baseadas em evidências da análise de dados, podem ser impl
 ---
 <br>
 
-##✅ **Conclusão**
 
-A análise e a modelagem preditiva foram eficazes em extrair insights valiosos do conjunto de dados de clientes. O modelo de Regressão Logística, com seu alto recall, se mostra como a ferramenta mais adequada para identificar clientes em risco de evasão. As estratégias propostas, focadas em clientes novos, fidelização, qualidade de serviço de internet e serviços adicionais, fornecem um guia prático para ações de retenção que podem impactar diretamente os resultados da empresa.
+## **Gráficos**
+### 1.	Seção EDA / Balanceamento
+   
+![Distribuição de Evasão](Gráficos/dist_evasao.png)
+
+### 2.	Seção Correlação / Seleção de Features
+
+![Correlação](Gráficos/correlacao.png)
+
+![Correlação e Limiar](Gráficos/corr_limiar.png)
+
+### 3.	Seção Análises Direcionadas
+
+![Total Gasto](Gráficos/totalgasto_evasao.png)
+
+![Tempo de Contrato](Gráficos/tempoContrato_evasao.png)
+
+### 4.	Seção Modelagem: Curvas e Matriz
+
+**•	Logistic Regression**
+
+![Curva ROC LR](Gráficos/curvaROC_LReg.png)
+
+![Curva de Precision e Recall Lreg](Gráficos/curvaPrecision_Recall_LReg.png)
+
+![Matriz de Confusão Lreg](Gráficos/matrix_conf_LReg.png)
+
+**•	Random Forest**
+
+![Curva ROC RFor](Gráficos/curvaROC_RFor.png)
+
+![Curva Precision Recall RFor](Gráficos/curvaPrecision_Recall_RFor.png)
+
+![Matriz de Confusão RFor](Gráficos/matrix_conf_RFor.png)
+
+### 5.	Seção Importância das Variáveis
+
+**•	Logistic Regression**
+
+![Variaveis de importancia LReg](Gráficos/var_import_RLog.png)
+
+**•	Random Forest**
+![Variaveis de importancia RFor](Gráficos/var_import_RFor.png)
 
 
 ---
 <br>
 
-1.	Seção EDA / Balanceamento
-•	Figura 1 — Distribuição de Churn (fig1_churn_distribution.png)
-•	Legenda: “Distribuição absoluta e percentual de clientes ativos vs evadidos”.
-2.	Seção Correlação / Seleção de Features
-•	Figura 2 — Heatmap das variáveis com |corr| >= 0.2 com Churn (fig2_heatmap_corr_churn.png)
-•	Legenda: “Matriz de correlação entre variables selecionadas e Churn — mostra correlações diretas/indiretas”.
-3.	Seção Análises Direcionadas
-•	Figura 3 — Boxplot Total Gasto x Churn (fig3_box_totalgasto_churn.png)
-•	Figura 4 — Boxplot Tenure x Churn (fig4_box_tenure_churn.png)
-•	Legendas: mediana e comparação entre grupos.
-4.	Seção Modelagem: Curvas e Matriz
-•	Figura 5 — ROC Logistic Regression (fig5_roc_lr.png)
-•	Figura 6 — ROC Random Forest (fig6_roc_rf.png)
-•	Figura 7 — Confusion Matrix LR (fig7_cm_lr.png)
-•	Figura 8 — Confusion Matrix RF (fig8_cm_rf.png)
-5.	Seção Importância das Variáveis
-•	Figura 9 — Top coeficientes (Logistic) (fig9_coef_lr.png)
-•	Figura 10 — Top importâncias (Random Forest) (fig10_imp_rf.png)
+# ✅ **Conclusão Final**
+
+A análise e a modelagem preditiva foram eficazes em extrair insights valiosos do conjunto de dados de clientes. O modelo de Regressão Logística, com seu alto recall, se mostra como a ferramenta mais adequada para identificar clientes em risco de evasão. As estratégias propostas, focadas em clientes novos, fidelização, qualidade de serviço de internet e serviços adicionais, fornecem um guia prático para ações de retenção que podem impactar diretamente os resultados da empresa.
 
 
-
-
-
-
+---
 
 ### **Autor:** Raphael Bertone
 
