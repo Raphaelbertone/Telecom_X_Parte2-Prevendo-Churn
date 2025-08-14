@@ -29,7 +29,7 @@ O objetivo final é fornecer à empresa uma base analítica sólida que permita 
 
 <br>
 
-# **Relatório Final de Análise e Previsão de Evasão de Clientes**
+# **Relatório de Análise e Previsão de Evasão de Clientes**
 
 ## **Resumo Executivo**
 
